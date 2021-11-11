@@ -1,3 +1,4 @@
+#include "LifeSimulator.hpp"
 class Renderer
 {
   public:
