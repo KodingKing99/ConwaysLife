@@ -3,19 +3,21 @@
 // #include <array>
 #include <iostream>
 
-LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY) :
-    sizeX(sizeX), sizeY(sizeY)
+LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY)
 {
-    std::cout << "Constructing Life Sim. sizeX: " << this->sizeX << sizeX << "sizeY: " << this->sizeY << sizeY << std::endl;
-    for (uint8_t row = 0; row < sizeX; row++)
+    width = sizeX;
+    height = sizeY;
+    std::cout << "Constructing Life Sim. width: " << width << "height: " << height << std::endl;
+    for (decltype(width) row = 0; row < width; row++)
     {
-        for (uint8_t col = 0; col < sizeY; col++)
+        std::vector<bool> col;
+        for (uint8_t c = 0; c < sizeY; c++)
         {
-            board[row].push_back(false);
+            col.push_back(false);
         };
+        board.push_back(col);
     };
     std::cout << "board after initialization: " << board.size() << std::endl;
-    // std::array<std::array<int, sizeY>, sizeX> board;
 };
 
 // void insertPattern(const Pattern& pattern, std::uint8_t startX, std::uint8_t startY);
