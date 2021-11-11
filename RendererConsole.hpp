@@ -1,5 +1,5 @@
 #include "Renderer.hpp"
-
+#pragma once
 #include <utility>
 class RendererConsole : public Renderer
 {

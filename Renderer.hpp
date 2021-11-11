@@ -1,4 +1,5 @@
 #include "LifeSimulator.hpp"
+#pragma once
 class Renderer
 {
   public:

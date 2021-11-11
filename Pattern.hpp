@@ -1,5 +1,5 @@
 #include <cstdint>
-
+#pragma once
 class Pattern
 {
   public:

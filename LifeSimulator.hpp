@@ -1,5 +1,5 @@
 #include "Pattern.hpp"
-
+#pragma once
 #include <vector>
 class LifeSimulator
 {
