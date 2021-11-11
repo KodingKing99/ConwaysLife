@@ -1,6 +1,6 @@
 #include "Renderer.hpp"
-class RenderConsole : public Renderer
+class RendererConsole : public Renderer
 {
   public:
-    void render(const LifeSimulator& simulation);
+    void render(const LifeSimulator& simulation) override;
 };

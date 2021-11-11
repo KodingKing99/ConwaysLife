@@ -16,4 +16,5 @@ class LifeSimulator
     std::uint8_t height;
     // Potentially change bool to unsigned int, store it's helth/num of neighbors
     std::vector<std::vector<bool>> board;
+    void toString();
 };
