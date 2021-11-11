@@ -34,7 +34,23 @@ void LifeSimulator::toString()
     }
 }
 
-// void insertPattern(const Pattern& pattern, std::uint8_t startX, std::uint8_t startY);
+void LifeSimulator::insertPattern(const Pattern& pattern, std::uint8_t startX, std::uint8_t startY)
+{
+    auto patWidth = pattern.getSizeX();
+    auto patHeight = pattern.getSizeY();
+    for (int i = startX; i < startX + patWidth; i++)
+    {
+        for (int j = startY; j < startY + patHeight; j++)
+        {
+            if (pattern.getCell(i - startX, j - startY))
+            {
+                // std::cout << "inserting 1 at ( " << i << " , " << j << " )" << std::endl;
+                board[i][j] = true;
+            }
+        }
+    }
+    // toString();
+}
 // void update();
 
 std::uint8_t LifeSimulator::getSizeX() const

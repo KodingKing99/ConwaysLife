@@ -25,6 +25,28 @@ void RendererConsole::render(const LifeSimulator& simulation)
     cursor.second += 2;
     // cursor.second -= simulation.getSizeY() / 2;
     rlutil::locate(cursor.first, cursor.second);
+    rlutil::hidecursor();
+    // go back to beginning
+    cursor = std::make_pair(1, 1);
+    for (uint8_t i = 0; i < simulation.getSizeX(); i++)
+    {
+        for (uint8_t j = 0; j < simulation.getSizeY(); j++)
+        {
+            if (simulation.getCell(i, j))
+            {
+                cursor = std::make_pair(i, j);
+                rlutil::locate(cursor.first, cursor.second);
+                rlutil::showcursor();
+                rlutil::setChar('x');
+                rlutil::hidecursor();
+            }
+        }
+    }
+    cursor = std::make_pair(1, 1);
+    // cursor.first = simulation.getSizeX();
+    cursor.second += simulation.getSizeY() + 2;
+    rlutil::locate(cursor.first, cursor.second);
+
     // cursor.first
     // std::cout << "rows: " << rlutil::trows() << " col: " << rlutil::tcols() << std::endl;
     // while (true)

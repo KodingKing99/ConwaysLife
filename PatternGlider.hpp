@@ -10,5 +10,5 @@ class PatternGlider : public Pattern
     bool getCell(std::uint8_t x, std::uint8_t y) const override;
 
   protected:
-    std::vector<std::vector<int>> pattern;
+    std::vector<std::vector<bool>> pattern;
 };

@@ -13,8 +13,10 @@ int main()
     std::cout << "in main. width: " << sim->getSizeX() << " height: " << sim->getSizeY() << std::endl;
     RendererConsole rc;
     // auto a = sim*
-    rc.render(*sim);
+    // rc.render(*sim);
     PatternGlider* pg = new PatternGlider();
+    sim->insertPattern(*pg, 10, 10);
+    rc.render(*sim);
     // rc->render(*sim);
     // RenderConsole* console = new RenderConsole(sim);
 }

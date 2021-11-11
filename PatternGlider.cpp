@@ -1,15 +1,6 @@
 #include "PatternGlider.hpp"
 
 #include <iostream>
-// class PatternGlider : public Pattern{
-//     public:
-//         PatternGlider();
-//         std::uint8_t getSizeX() const override;
-//         std::uint8_t getSizeY() const override;
-//         bool getCell(std::uint8_t x, std::uint8_t y) const override;
-//     private:
-//         std::vector<std::vector<int>> pattern;
-// };
 PatternGlider::PatternGlider() :
     pattern({ { 0, 0, 1 },
               { 1, 0, 1 },
@@ -26,5 +17,5 @@ std::uint8_t PatternGlider::getSizeY() const
 }
 bool PatternGlider::getCell(std::uint8_t x, std::uint8_t y) const
 {
-    return true;
+    return pattern[x][y];
 }
