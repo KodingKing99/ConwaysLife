@@ -1,6 +1,5 @@
 #include "PatternGlider.hpp"
-
-#include <iostream>
+// #include <iostream>
 PatternGlider::PatternGlider() :
     pattern({ { 0, 0, 1 },
               { 1, 0, 1 },

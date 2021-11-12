@@ -7,10 +7,10 @@ set(PROJECT_NAME ConwaysLife)
 project(${PROJECT_NAME})
 
 set(HEADER_FILES
-    Pattern.hpp Renderer.hpp LifeSimulator.hpp RendererConsole.hpp PatternGlider.hpp)
+    Pattern.hpp Renderer.hpp LifeSimulator.hpp RendererConsole.hpp PatternGlider.hpp PatternAcorn.hpp)
 
 set(SOURCE_FILES
-    LifeSimulator.cpp RendererConsole.cpp PatternGlider.cpp)
+    LifeSimulator.cpp RendererConsole.cpp PatternGlider.cpp PatternAcorn.cpp)
 
 #set(UNIT_TEST_FILES
 #   TestPerformance.cpp)

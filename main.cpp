@@ -1,17 +1,28 @@
+#include "PatternAcorn.hpp"
 #include "PatternGlider.hpp"
 #include "RendererConsole.hpp"
 #include "rlutil.h"
-#include <thread>
+
 #include <iostream>
+#include <thread>
 int main()
 {
     std::cout << "Hello World!" << std::endl;
     LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
     std::cout << "in main. width: " << sim->getSizeX() << " height: " << sim->getSizeY() << std::endl;
     RendererConsole rc;
-    PatternGlider* pg = new PatternGlider();
-    sim->insertPattern(*pg, 10, 10);
+    // PatternGlider* pg = new PatternGlider();
+    // sim->insertPattern(*pg, 10, 10);
     // animate
+    // for (int i = 0; i < 300; i++)
+    // {
+    //     rc.render(*sim);
+    //     // std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    //     sim->update();
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(150));
+    // }
+    PatternAcorn* pa = new PatternAcorn();
+    sim->insertPattern(*pa, 10, 10);
     for (int i = 0; i < 300; i++)
     {
         rc.render(*sim);
