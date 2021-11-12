@@ -44,7 +44,7 @@ void RendererConsole::render(const LifeSimulator& simulation)
     }
     cursor = std::make_pair(1, 1);
     // cursor.first = simulation.getSizeX();
-    cursor.second += simulation.getSizeY() + 2;
+    // cursor.second += simulation.getSizeY() + 2;
     rlutil::locate(cursor.first, cursor.second);
 
     // cursor.first

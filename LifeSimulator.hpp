@@ -1,5 +1,6 @@
 #include "Pattern.hpp"
 #pragma once
+#include <utility>
 #include <vector>
 class LifeSimulator
 {
@@ -10,6 +11,7 @@ class LifeSimulator
     std::uint8_t getSizeX() const;
     std::uint8_t getSizeY() const;
     bool getCell(std::uint8_t x, std::uint8_t y) const;
+    std::vector<std::pair<int, int>> checkNeighbors(uint8_t x, uint8_t y);
 
   protected:
     std::uint8_t width;
@@ -17,4 +19,6 @@ class LifeSimulator
     // Potentially change bool to unsigned int, store it's helth/num of neighbors
     std::vector<std::vector<bool>> board;
     void toString();
+    std::vector<std::pair<int, int>> changeList;
+    // std::vector<std::pair<>>
 };
