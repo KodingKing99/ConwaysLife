@@ -126,25 +126,25 @@ void LifeSimulator::update()
                 // else{
                 //     deadNeighbors++;
                 // }
-                if (isAlive && aliveNeighbors < 2)
-                {
-                    // Cell dies
-                    newBoard[i][j] = false;
-                }
-                else if (isAlive && (aliveNeighbors == 2 || aliveNeighbors == 3))
-                {
-                    // cell lives, continue on to next cell
-                    continue;
-                }
-                else if (isAlive && aliveNeighbors > 3)
-                {
-                    // cell dies
-                    newBoard[i][j] = false;
-                }
-                else if (!isAlive && aliveNeighbors == 3)
-                {
-                    newBoard[i][j] = true;
-                }
+            }
+            if (isAlive && aliveNeighbors < 2)
+            {
+                // Cell dies
+                newBoard[i][j] = false;
+            }
+            // else if (isAlive && (aliveNeighbors == 2 || aliveNeighbors == 3))
+            // {
+            //     // cell lives, continue on to next cell
+            //     continue;
+            // }
+            else if (isAlive && aliveNeighbors > 3)
+            {
+                // cell dies
+                newBoard[i][j] = false;
+            }
+            else if (!isAlive && aliveNeighbors == 3)
+            {
+                newBoard[i][j] = true;
             }
         }
     }
