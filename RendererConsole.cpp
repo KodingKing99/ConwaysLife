@@ -7,25 +7,28 @@ RendererConsole::RendererConsole() :
     cursor(std::make_pair(1, 1)) {}
 void RendererConsole::render(const LifeSimulator& simulation)
 {
-    std::cout << "Rendering... cursor (" << cursor.first << ", " << cursor.second << ")" << std::endl;
+    // std::cout << "Rendering... cursor (" << cursor.first << ", " << cursor.second << ")" << std::endl;
     rlutil::cls();
     // rlutil::setColor(3);
-    rlutil::setChar('x');
-    rlutil::hidecursor();
-    cursor.first += simulation.getSizeX();
-    rlutil::locate(cursor.first, cursor.second);
-    rlutil::showcursor();
-    rlutil::setChar('x');
-    cursor.second += simulation.getSizeY();
-    rlutil::locate(cursor.first, cursor.second);
-    rlutil::setChar('x');
-    cursor.first -= simulation.getSizeX();
-    rlutil::locate(cursor.first, cursor.second);
-    rlutil::setChar('x');
-    cursor.second += 2;
-    // cursor.second -= simulation.getSizeY() / 2;
-    rlutil::locate(cursor.first, cursor.second);
-    rlutil::hidecursor();
+    // rlutil::setChar('x');
+    // rlutil::hidecursor();
+    // cursor.first += simulation.getSizeX();
+    // rlutil::locate(cursor.first, cursor.second);
+    // rlutil::showcursor();
+    // rlutil::setChar('x');
+    // rlutil::hidecursor();
+    // cursor.second += simulation.getSizeY();
+    // rlutil::locate(cursor.first, cursor.second);
+    // rlutil::showcursor();
+    // rlutil::setChar('x');
+    // rlutil::hidecursor();
+    // cursor.first -= simulation.getSizeX();
+    // rlutil::locate(cursor.first, cursor.second);
+    // rlutil::setChar('x');
+    // cursor.second += 2;
+    // // cursor.second -= simulation.getSizeY() / 2;
+    // rlutil::locate(cursor.first, cursor.second);
+    // rlutil::hidecursor();
     // go back to beginning
     cursor = std::make_pair(1, 1);
     for (uint8_t i = 0; i < simulation.getSizeX(); i++)
@@ -46,7 +49,7 @@ void RendererConsole::render(const LifeSimulator& simulation)
     // cursor.first = simulation.getSizeX();
     // cursor.second += simulation.getSizeY() + 2;
     rlutil::locate(cursor.first, cursor.second);
-
+    std::cout << std::flush;
     // cursor.first
     // std::cout << "rows: " << rlutil::trows() << " col: " << rlutil::tcols() << std::endl;
     // while (true)

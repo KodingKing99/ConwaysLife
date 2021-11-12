@@ -20,5 +20,6 @@ class LifeSimulator
     std::vector<std::vector<bool>> board;
     void toString();
     std::vector<std::pair<int, int>> changeList;
+    void refreshBoard();
     // std::vector<std::pair<>>
 };

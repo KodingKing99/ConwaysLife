@@ -20,9 +20,20 @@ LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY)
     std::cout << "board after initialization: " << board.size() << std::endl;
     // toString();
 }
+// void LifeSimulator::refreshBoard(){
+//     for (decltype(width) row = 0; row < width; row++)
+//     {
+//         std::vector<bool> col;
+//         for (uint8_t c = 0; c < height; c++)
+//         {
+//             col.push_back(false);
+//         };
+//         board.push_back(col);
+//     };
+// }
 void LifeSimulator::toString()
 {
-    for (int i = 0; i < board.size(); i++)
+    for (long unsigned int i = 0; i < board.size(); i++)
     {
         std::cout << i << ": [ ";
         for (int x : board[i])
@@ -105,7 +116,6 @@ std::vector<std::pair<int, int>> LifeSimulator::checkNeighbors(uint8_t x, uint8_
 }
 void LifeSimulator::update()
 {
-    std::cout << "Updating..." << std::endl;
     // make copy of board
     auto newBoard = board;
     for (uint8_t i = 0; i < board.size(); i++)
