@@ -13,7 +13,7 @@
 //////////
 void animateBlinker()
 {
-    LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
+    LifeSimulator* sim = new LifeSimulator(static_cast<uint8_t>(rlutil::tcols()), static_cast<uint8_t>(rlutil::trows() - 5));
     RendererConsole rc;
     PatternBlinker pb;
     sim->insertPattern(pb, 50, 20);
@@ -29,7 +29,7 @@ void animateBlinker()
 }
 void animateAcorn()
 {
-    LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
+    LifeSimulator* sim = new LifeSimulator(static_cast<uint8_t>(rlutil::tcols()), static_cast<uint8_t>(rlutil::trows() - 5));
     RendererConsole rc;
     PatternAcorn pa;
     sim->insertPattern(pa, 50, 20);
@@ -45,7 +45,7 @@ void animateAcorn()
 }
 void animateGlider()
 {
-    LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
+    LifeSimulator* sim = new LifeSimulator(static_cast<uint8_t>(rlutil::tcols()), static_cast<uint8_t>(rlutil::trows() - 5));
     RendererConsole rc;
     PatternGlider pg;
     sim->insertPattern(pg, 50, 20);
@@ -61,7 +61,7 @@ void animateGlider()
 }
 void animateBlock()
 {
-    LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
+    LifeSimulator* sim = new LifeSimulator(static_cast<uint8_t>(rlutil::tcols()), static_cast<uint8_t>(rlutil::trows() - 5));
     RendererConsole rc;
     PatternBlock pb;
     sim->insertPattern(pb, 50, 20);
@@ -77,7 +77,7 @@ void animateBlock()
 }
 void animateGosperGliderGun()
 {
-    LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
+    LifeSimulator* sim = new LifeSimulator(static_cast<uint8_t>(rlutil::tcols()), static_cast<uint8_t>(rlutil::trows() - 5));
     RendererConsole rc;
     PatternGosperGliderGun gg;
     sim->insertPattern(gg, 50, 20);

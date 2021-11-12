@@ -39,7 +39,7 @@ void LifeSimulator::insertPattern(const Pattern& pattern, std::uint8_t startX, s
     {
         for (int j = startY; j < startY + patHeight; j++)
         {
-            if (pattern.getCell(i - startX, j - startY))
+            if (pattern.getCell(static_cast<uint8_t>(i - startX), static_cast<uint8_t>(j - startY)))
             {
                 board[i][j] = true;
             }
@@ -106,7 +106,7 @@ void LifeSimulator::update()
             int aliveNeighbors = 0;
             for (auto neighbor : neighbors)
             {
-                if (getCell(neighbor.first, neighbor.second))
+                if (getCell(static_cast<uint8_t>(neighbor.first), static_cast<uint8_t>(neighbor.second)))
                 {
                     aliveNeighbors++;
                 }
