@@ -16,5 +16,5 @@ std::uint8_t PatternGlider::getSizeY() const
 }
 bool PatternGlider::getCell(std::uint8_t x, std::uint8_t y) const
 {
-    return pattern[x][y];
+    return pattern[y][x];
 }

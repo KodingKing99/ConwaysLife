@@ -1,11 +1,15 @@
 #include "PatternAcorn.hpp"
 #include "PatternBlinker.hpp"
+#include "PatternBlock.hpp"
 #include "PatternGlider.hpp"
 #include "RendererConsole.hpp"
 #include "rlutil.h"
 
 #include <iostream>
 #include <thread>
+//////////
+// I could have combined these into one function, but I didn't want to deal with references and what not...
+//////////
 void animateBlinker()
 {
     LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
@@ -54,41 +58,30 @@ void animateGlider()
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
 }
+void animateBlock()
+{
+    LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
+    RendererConsole rc;
+    PatternBlock pb;
+    sim->insertPattern(pb, 50, 20);
+    std::cout << "--- Block --- " << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(700));
+    for (int i = 0; i < 30; i++)
+    {
+        rc.render(*sim);
+        // std::this_thread::sleep_for(std::chrono::milliseconds(300));
+        sim->update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+}
 int main()
 {
-    // std::cout << "Hello World!" << std::endl;
-    // LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
-    // std::cout << "in main. width: " << sim->getSizeX() << " height: " << sim->getSizeY() << std::endl;
-    // RendererConsole rc;
-
     animateBlinker();
     rlutil::cls();
     animateAcorn();
     rlutil::cls();
     animateGlider();
     rlutil::cls();
-    // PatternGlider* pg = new PatternGlider();
-    // sim->insertPattern(*pg, 10, 10);
-    // for (int i = 0; i < 300; i++)
-    // {
-    //     rc.render(*sim);
-    //     // std::this_thread::sleep_for(std::chrono::milliseconds(300));
-    //     sim->update();
-    //     std::this_thread::sleep_for(std::chrono::milliseconds(150));
-    // }
-    // std::cout << "--- Acorn --- " << std::endl;
-    // std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    // PatternAcorn* pa = new PatternAcorn();
-    // sim->insertPattern(*pa, 50, 20);
-    // for (int i = 0; i < 200; i++)
-    // {
-    //     rc.render(*sim);
-    //     // std::this_thread::sleep_for(std::chrono::milliseconds(300));
-    //     sim->update();
-    //     std::this_thread::sleep_for(std::chrono::milliseconds(200));
-    // }
-    // LifeSimulator* sim = new LifeSimulator(rlutil::tcols(), rlutil::trows() - 5);
-
-    // delete sim;
-    // delete pb;
+    animateBlock();
+    rlutil::cls();
 }
