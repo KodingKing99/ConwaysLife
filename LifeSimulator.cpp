@@ -7,7 +7,6 @@ LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY)
 {
     width = sizeX;
     height = sizeY;
-    std::cout << "Constructing Life Sim. width: " << width << "height: " << height << std::endl;
     for (decltype(width) row = 0; row < width; row++)
     {
         std::vector<bool> col;
@@ -17,20 +16,7 @@ LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY)
         };
         board.push_back(col);
     };
-    std::cout << "board after initialization: " << board.size() << std::endl;
-    // toString();
 }
-// void LifeSimulator::refreshBoard(){
-//     for (decltype(width) row = 0; row < width; row++)
-//     {
-//         std::vector<bool> col;
-//         for (uint8_t c = 0; c < height; c++)
-//         {
-//             col.push_back(false);
-//         };
-//         board.push_back(col);
-//     };
-// }
 void LifeSimulator::toString()
 {
     for (long unsigned int i = 0; i < board.size(); i++)
@@ -59,7 +45,6 @@ void LifeSimulator::insertPattern(const Pattern& pattern, std::uint8_t startX, s
             }
         }
     }
-    // toString();
 }
 std::vector<std::pair<int, int>> LifeSimulator::checkNeighbors(uint8_t x, uint8_t y)
 {
@@ -105,13 +90,6 @@ std::vector<std::pair<int, int>> LifeSimulator::checkNeighbors(uint8_t x, uint8_
     {
         neighbors.push_back(std::make_pair(x + 1, y - 1));
     }
-    // output
-    // std::cout << "Neighbors: ";
-    // for (auto pairs : neighbors)
-    // {
-    //     std::cout << "( " << pairs.first << " , " << pairs.second << " )  ";
-    // }
-    // std::cout << std::endl;
     return neighbors;
 }
 void LifeSimulator::update()
@@ -126,27 +104,18 @@ void LifeSimulator::update()
             auto neighbors = checkNeighbors(i, j);
             bool isAlive = getCell(i, j);
             int aliveNeighbors = 0;
-            // int deadNeighbors = 0;
             for (auto neighbor : neighbors)
             {
                 if (getCell(neighbor.first, neighbor.second))
                 {
                     aliveNeighbors++;
                 }
-                // else{
-                //     deadNeighbors++;
-                // }
             }
             if (isAlive && aliveNeighbors < 2)
             {
                 // Cell dies
                 newBoard[i][j] = false;
             }
-            // else if (isAlive && (aliveNeighbors == 2 || aliveNeighbors == 3))
-            // {
-            //     // cell lives, continue on to next cell
-            //     continue;
-            // }
             else if (isAlive && aliveNeighbors > 3)
             {
                 // cell dies
