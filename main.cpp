@@ -80,27 +80,27 @@ void animateGosperGliderGun()
     LifeSimulator* sim = new LifeSimulator(static_cast<uint8_t>(rlutil::tcols()), static_cast<uint8_t>(rlutil::trows() - 5));
     RendererConsole rc;
     PatternGosperGliderGun gg;
-    sim->insertPattern(gg, 50, 20);
+    sim->insertPattern(gg, 1, 10);
     std::cout << "--- Gosper Glider Gun --- " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
-    for (int i = 0; i < 200; i++)
+    for (int i = 0; i < 800; i++)
     {
         rc.render(*sim);
         // std::this_thread::sleep_for(std::chrono::milliseconds(300));
         sim->update();
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
 int main()
 {
-    animateBlinker();
-    rlutil::cls();
-    animateAcorn();
-    rlutil::cls();
-    animateGlider();
-    rlutil::cls();
-    animateBlock();
-    rlutil::cls();
+    //animateBlinker();
+    //rlutil::cls();
+    //animateAcorn();
+    //rlutil::cls();
+    //animateGlider();
+    //rlutil::cls();
+    //animateBlock();
+    //rlutil::cls();
     animateGosperGliderGun();
     rlutil::cls();
 }
